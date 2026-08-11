@@ -5,7 +5,7 @@ A clean, modern web-based typing speed and accuracy test application built to he
 🌐 **Live Website:** [san-types.web.app](https://san-types.web.app/)
 
 ---
-
+![Alt text for the image](image.png)
 ## ✨ Features
 
 - **Real-time WPM & Accuracy Tracking:** Instant statistics on speed (Words Per Minute) and typing precision.
