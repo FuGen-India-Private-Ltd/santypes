@@ -6,9 +6,10 @@ A clean, modern web-based typing speed and accuracy test application built to he
 
 ## Preview 📸
 
-![Santypes Settings](image.png)
+
 
 ![Santypes Typing View](image2.PNG)
+![Santypes Settings](image.png)
 
 ## ✨ Features
 
