@@ -9,6 +9,7 @@ A clean, modern web-based typing speed and accuracy test application built to he
 ![Santypes Settings](image.png)
 
 ![Santypes Typing View](image2.PNG)
+
 ## ✨ Features
 
 - **Real-time WPM & Accuracy Tracking:** Instant statistics on speed (Words Per Minute) and typing precision.
