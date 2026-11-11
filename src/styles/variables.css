@@ -1,0 +1,144 @@
+:root {
+  /* Color Palette - Pure Deep Black Background */
+  --bg-app: #000000;
+  --bg-surface: #0a0b0e;
+  --bg-surface-glass: rgba(10, 11, 14, 0.9);
+  --bg-surface-hover: rgba(255, 255, 255, 0.06);
+  --bg-surface-active: rgba(255, 255, 255, 0.1);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(56, 189, 248, 0.35);
+  --border-active: #94a3b8;
+
+  /* Typography */
+  --font-ui: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-typing: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'Noto Sans Devanagari', 'Noto Sans Kannada', monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'Noto Sans Devanagari', 'Noto Sans Kannada', monospace;
+
+  /* Text Colors */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dim: #333d4d;
+
+  /* Typing Specific Colors - Crisp on Pure Black */
+  --char-pending: #64748b;        /* Crisp readable slate text on pure black */
+  --char-correct: #f8fafc;        /* Crisp brilliant white */
+  --char-incorrect: #f43f5e;      /* Vivid rose/coral */
+  --char-incorrect-bg: rgba(244, 63, 94, 0.18);
+  --char-extra: #fb7185;
+  --caret-color: #38bdf8;         /* Electric cyan cursor */
+  --caret-glow: rgba(56, 189, 248, 0.35);
+
+  /* Accents */
+  --accent-cyan: #38bdf8;
+  --accent-amber: #f59e0b;
+  --accent-emerald: #10b981;
+  --accent-rose: #f43f5e;
+
+  /* Shadows & Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.7);
+  --shadow-glow: none;
+  --transition-fast: 0.12s ease;
+  --transition-normal: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg-app: #000000;
+  --bg-surface: #0a0b0e;
+  --bg-surface-glass: rgba(10, 11, 14, 0.9);
+}
+
+[data-theme="oled"] {
+  --bg-app: #000000;
+  --bg-surface: #000000;
+  --bg-surface-glass: rgba(0, 0, 0, 0.95);
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-focus: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="serika"] {
+  --bg-app: #000000;
+  --bg-surface: #0c0d10;
+  --bg-surface-glass: rgba(12, 13, 16, 0.9);
+  --char-pending: #4e5361;
+  --char-correct: #e2b714;
+  --caret-color: #e2b714;
+  --caret-glow: rgba(226, 183, 20, 0.35);
+  --border-focus: rgba(226, 183, 20, 0.35);
+}
+
+/* Accent Color Variations */
+[data-accent="cyan"] {
+  --accent-cyan: #38bdf8;
+  --caret-color: #38bdf8;
+  --caret-glow: rgba(56, 189, 248, 0.35);
+  --border-focus: rgba(56, 189, 248, 0.4);
+}
+
+[data-accent="amber"] {
+  --accent-cyan: #f59e0b;
+  --caret-color: #f59e0b;
+  --caret-glow: rgba(245, 158, 11, 0.35);
+  --border-focus: rgba(245, 158, 11, 0.4);
+}
+
+[data-accent="emerald"] {
+  --accent-cyan: #10b981;
+  --caret-color: #10b981;
+  --caret-glow: rgba(16, 185, 129, 0.35);
+  --border-focus: rgba(16, 185, 129, 0.4);
+}
+
+[data-accent="rose"] {
+  --accent-cyan: #f43f5e;
+  --caret-color: #f43f5e;
+  --caret-glow: rgba(244, 63, 94, 0.35);
+  --border-focus: rgba(244, 63, 94, 0.4);
+}
+
+[data-accent="purple"] {
+  --accent-cyan: #a855f7;
+  --caret-color: #a855f7;
+  --caret-glow: rgba(168, 85, 247, 0.35);
+  --border-focus: rgba(168, 85, 247, 0.4);
+}
+
+[data-accent="sky"] {
+  --accent-cyan: #0ea5e9;
+  --caret-color: #0ea5e9;
+  --caret-glow: rgba(14, 165, 233, 0.35);
+  --border-focus: rgba(14, 165, 233, 0.4);
+}
+
+/* Accessibility Modifiers */
+[data-reduced-motion="true"] *,
+[data-reduced-motion="true"] *::before,
+[data-reduced-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+[data-high-contrast="true"] {
+  --border-subtle: rgba(255, 255, 255, 0.28);
+  --text-muted: #94a3b8;
+  --char-pending: #64748b;
+  --char-correct: #ffffff;
+}
+
+[data-dyslexia="true"] .typing-viewport {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+  letter-spacing: 0.08em !important;
+  word-spacing: 0.2em !important;
+}
+
+[data-blind-mode="true"] .typing-stream .char {
+  color: var(--char-pending) !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
+}

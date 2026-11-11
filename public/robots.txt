@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://san-types.web.app/sitemap.xml

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ &amp; Q&amp;A | Santypes</title>
+    <meta name="description" content="Frequently asked questions about Santypes typing metrics, privacy, Indic languages, shortcuts, and security policy." />
+    <link rel="canonical" href="https://san-types.web.app/faq.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://san-types.web.app/faq.html" />
+    <meta property="og:title" content="FAQ &amp; Q&amp;A | Santypes" />
+    <meta property="og:description" content="Answers on typing metrics, English/Kannada/Hindi input, privacy controls, and keyboard shortcuts." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2309090b'/><text x='16' y='23' font-size='20' text-anchor='middle' font-family='monospace' fill='%238b5cf6'>St</text></svg>" />
+    <link rel="stylesheet" href="/static-pages.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="eyebrow">Help &amp; Documentation</div>
+      <h1>Frequently Asked Questions</h1>
+      <p class="sub">Answers on typing metrics, English/Kannada/Hindi input, privacy controls, and keyboard shortcuts.</p>
+
+      <details open>
+        <summary>How does Santypes calculate Net WPM, Raw WPM, Accuracy, and Consistency?</summary>
+        <p>Net WPM treats 5 correct characters as 1 standard word divided by elapsed minutes, excluding uncommitted/incorrect keystrokes from net speed. Raw WPM includes all typed keystrokes. Accuracy tracks correct vs total keystrokes, and Consistency measures steadiness across per-second buckets (0–100%).</p>
+      </details>
+
+      <details>
+        <summary>Does Santypes support Kannada and Hindi typing accurately?</summary>
+        <p>Yes. Choose English, Kannada (Native or Kanglish), or Hindi (Native or Hinglish) in the Typing Test bar. The engine segments Unicode scripts by grapheme clusters so conjuncts and vowel signs score accurately.</p>
+      </details>
+
+      <details>
+        <summary>Why is copy-paste blocked inside the typing test arena?</summary>
+        <p>Paste and drop events are blocked inside the live typing test input to protect score and analytics integrity. Use Custom mode or Curriculum custom lessons to practice your own passages.</p>
+      </details>
+
+      <details>
+        <summary>Where is my typing history saved? Do I need an account?</summary>
+        <p>Santypes operates client-side with zero user accounts or backend databases. Typing history, streaks, badges, custom lessons, feedback drafts, and preferences stay solely in browser <code>localStorage</code> on your device.</p>
+      </details>
+
+      <details>
+        <summary>Does Santypes track me or upload typed text or feedback notes?</summary>
+        <p>No typed text or free-text feedback notes are ever sent to analytics. All typography assets are self-hosted with zero external font beacons. Optional anonymous Google Analytics 4 stays disabled by default (and honors Global Privacy Control) until you opt in via the consent banner or Privacy settings.</p>
+      </details>
+
+      <details>
+        <summary>How do I export or permanently delete all of my local data?</summary>
+        <p>Open <strong>Privacy &amp; IT Notice</strong> in the app footer or <strong>Settings &rarr; Privacy &amp; Data</strong> to download a full JSON backup or permanently erase all stored data and analytics cookies.</p>
+      </details>
+
+      <details>
+        <summary>What keyboard shortcuts are built in?</summary>
+        <p>Use <strong>Tab</strong> to restart, <strong>Esc</strong> to reset/close modals, <strong>Ctrl+Shift+F</strong> for Focus Mode, <strong>Ctrl+Shift+W</strong> for word-error mode, <strong>Ctrl+Shift+P</strong> for Pomodoro timer, and <strong>Ctrl+Shift+?</strong> for the full shortcuts cheatsheet.</p>
+      </details>
+
+      <details>
+        <summary>How do I report a bug, suggest features, or report a security issue?</summary>
+        <p>Use the in-app <strong>Feedback</strong> modal to copy a local report summary, open public bugs or support tickets via <a class="link" href="https://github.com/suhas-hoskere/santypes/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>, or report vulnerabilities via <a class="link" href="https://github.com/suhas-hoskere/santypes/security" target="_blank" rel="noopener noreferrer">GitHub Security</a> (<code>/.well-known/security.txt</code>).</p>
+      </details>
+
+      <nav class="nav-row" aria-label="Site navigation">
+        <a class="btn" href="/">Back to Santypes</a>
+        <a class="link" href="/terms.html">Terms of Use</a>
+        <a class="link" href="/.well-known/security.txt">Security Policy</a>
+      </nav>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santypes — Precision Typing Platform</title>
+  <meta name="description" content="Next-generation keyboard-first precision typing platform with zero lag, instant feedback, and deep metrics." />
+  <meta name="theme-color" content="#09090b" />
+  <link rel="canonical" href="https://san-types.web.app/" />
+  <meta name="application-name" content="Santypes" />
+  <meta name="google-site-verification" content="GZ5Z4uDMOn0Vps0jiv76kLFmFQGK4xRO2-75lyjIUZM" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://san-types.web.app/" />
+  <meta property="og:title" content="Santypes — Precision Typing Platform" />
+  <meta property="og:description" content="Next-generation keyboard-first precision typing platform with zero lag, instant feedback, and deep metrics." />
+  <meta property="og:image" content="https://san-types.web.app/preview-image.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://san-types.web.app/" />
+  <meta name="twitter:title" content="Santypes — Precision Typing Platform" />
+  <meta name="twitter:description" content="Next-generation keyboard-first precision typing platform with zero lag, instant feedback, and deep metrics." />
+  <meta name="twitter:image" content="https://san-types.web.app/preview-image.png" />
+
+  <!-- PWA & Favicon -->
+  <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;Santypes&quot;,&quot;short_name&quot;:&quot;Santypes&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;%2309090b&quot;,&quot;theme_color&quot;:&quot;%2309090b&quot;,&quot;start_url&quot;:&quot;.&quot;,&quot;icons&quot;:[]}" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2309090b'/><text x='16' y='23' font-size='20' text-anchor='middle' font-family='monospace' fill='%238b5cf6'>St</text></svg>" />
+
+  <!-- Self-hosted @fontsource typography imported cleanly in src/main.ts (0 external CDN calls) -->
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="/src/styles/index.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Top Navigation Bar -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="2"></rect>
+            <path d="M15 8.5a2.5 2.5 0 0 0-2.8-1.5c-1.6 0-2.7 1-2.7 2.3 0 2.5 5 1.8 5 4.4 0 1.4-1.2 2.3-2.8 2.3a2.8 2.8 0 0 1-2.9-1.8" stroke-width="2.2"></path>
+            <line x1="8" y1="19" x2="16" y2="19" stroke-width="1.8" opacity="0.4"></line>
+          </svg>
+        </div>
+        <div class="brand-name">San<span>types</span></div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="test" id="tab-typing-test">
+          <span class="tab-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </span>
+          <span>Typing Test</span>
+        </button>
+        <button class="nav-tab" data-tab="curriculum" id="tab-curriculum" title="Guided Touch-Typing Curriculum & Lessons">
+          <span class="tab-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </span>
+          <span>Curriculum</span>
+        </button>
+        <button class="nav-tab" data-tab="analytics" id="tab-analytics" title="View Speed Progression & Lifetime Analytics">
+          <span class="tab-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          </span>
+          <span>Analytics</span>
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="profile-pill-btn" id="btn-profile-pill" title="View Typist Profile, Level, Streaks & Badges">
+          <span class="profile-level-badge" id="header-profile-level">Lv. 1</span>
+          <div class="profile-xp-bar-mini">
+            <div class="profile-xp-fill-mini" id="header-profile-xp-fill" style="width: 0%;"></div>
+          </div>
+          <span class="profile-streak" id="header-profile-streak">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span>0d</span>
+          </span>
+        </button>
+
+        <button class="feedback-pill-btn" id="btn-feedback-toggle" title="Share Feedback & Vote for Future 3D Games">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <span>Feedback</span>
+        </button>
+
+        <button class="icon-btn" id="btn-sound-toggle" title="Toggle Mechanical Audio Feedback (Click / Keystrokes)">
+          <span id="sound-icon" style="display:flex;align-items:center;justify-content:center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          </span>
+        </button>
+        <button class="icon-btn" id="btn-theme-toggle" title="Toggle Theme (Dark / OLED)" style="display:flex;align-items:center;justify-content:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="icon-btn" id="btn-settings-toggle" title="Preferences & Accessibility" style="display:flex;align-items:center;justify-content:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Viewport -->
+    <main class="app-main" id="app-root">
+      <noscript>
+        <div class="app-fallback-card" role="alert">
+          <div class="app-fallback-code">JavaScript Required</div>
+          <h2>Enable JavaScript to Launch Santypes</h2>
+          <p>
+            Santypes runs 100% locally in your browser with zero server tracking by default.
+            Please enable JavaScript and reload this page to use the Typing Test, Curriculum, and Analytics views.
+          </p>
+        </div>
+      </noscript>
+    </main>
+
+    <!-- Compliance, Privacy & Security Disclosure Footer -->
+    <footer class="app-footer" aria-label="Legal and Privacy Disclosures">
+      <div class="app-footer-inner">
+        <span class="footer-brand-note">Santypes · Local-First Client App (Zero Account Server)</span>
+        <div class="footer-links">
+          <button type="button" class="footer-link-btn" id="btn-footer-faq">FAQ / Q&amp;A</button>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <button type="button" class="footer-link-btn" id="btn-footer-terms">Terms of Use</button>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <button type="button" class="footer-link-btn" id="btn-footer-privacy">Privacy &amp; IT Notice</button>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <button type="button" class="footer-link-btn" id="btn-footer-cookies">Cookie Preferences</button>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <a href="/.well-known/security.txt" target="_blank" rel="noopener noreferrer" class="footer-link-btn">Security Policy</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
