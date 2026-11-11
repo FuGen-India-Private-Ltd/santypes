@@ -1,0 +1,7 @@
+# Santypes Security & Vulnerability Disclosure Policy (RFC 9116)
+Contact: https://github.com/suhas-hoskere/santypes/security
+Contact: https://github.com/suhas-hoskere/santypes/issues
+Expires: 2027-11-10T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://san-types.web.app/.well-known/security.txt
+Policy: https://github.com/suhas-hoskere/santypes/blob/main/SECURITY.md

@@ -1,0 +1,1838 @@
+/* ========================================================================= */
+/* Santypes Cyber Arcade — Layout, Sizing & Placing Stylesheet               */
+/* 100% Framework-Free Pure Vanilla CSS                                      */
+/* ========================================================================= */
+
+.arcade-view-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 76px);
+  min-height: 560px;
+  max-height: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #000000;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.95);
+  box-sizing: border-box;
+}
+
+/* ========================================================================= */
+/* 1. ARCADE GALLERY / HUB SCREEN                                            */
+/* ========================================================================= */
+
+.arcade-hub-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #000000;
+}
+
+/* Top Header Bar */
+.arcade-hub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 10;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.arcade-brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.arcade-hub-title {
+  font-family: var(--font-ui);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.arcade-hub-title span {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.arcade-hub-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Lifetime Stats Ribbon */
+.arcade-quick-stats {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.arcade-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.arcade-stat-item strong {
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+}
+
+/* Grid of Games */
+.arcade-games-scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 28px 36px;
+}
+
+.arcade-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Game Card */
+.arcade-game-card {
+  position: relative;
+  background: #08080a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  text-align: left;
+}
+
+.arcade-game-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
+  background: #111114;
+}
+
+.arcade-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.arcade-card-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #141418;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.arcade-card-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+}
+
+.arcade-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.arcade-card-title {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.arcade-card-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.arcade-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: auto;
+}
+
+.arcade-card-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.arcade-metric-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.arcade-metric-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--card-accent, #fff);
+}
+
+.arcade-card-launch-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 8px 18px;
+  min-height: 36px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.arcade-card-launch-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.arcade-card-launch-btn:hover,
+.arcade-game-card:hover .arcade-card-launch-btn {
+  background: var(--card-accent, var(--accent-cyan));
+  color: #08080b;
+  border-color: transparent;
+  font-weight: 800;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.arcade-card-launch-btn:hover svg,
+.arcade-game-card:hover .arcade-card-launch-btn svg {
+  transform: translateX(3px);
+}
+
+/* ========================================================================= */
+/* 2. IN-GAME ARENA VIEWPORT                                                 */
+/* ========================================================================= */
+
+.arcade-arena-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arena Header / HUD Ribbon */
+.arcade-arena-header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  z-index: 15;
+  gap: 14px;
+}
+
+.arcade-back-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  min-height: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.arcade-back-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Live In-Game HUD Pills */
+.arcade-hud-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.arcade-hud-boss {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.boss-health-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 245px;
+  flex-shrink: 0;
+}
+
+.boss-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.boss-title {
+  color: #f43f5e;
+  letter-spacing: 0.04em;
+}
+
+.boss-hp-val {
+  color: #fff;
+  font-size: 10px;
+}
+
+.boss-hp-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.boss-hp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f43f5e 0%, #fb7185 100%);
+  transition: width 0.15s ease-out;
+}
+
+.boss-stagger-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.boss-stagger-fill {
+  height: 100%;
+  background: #a855f7;
+  transition: width 0.15s ease-out;
+}
+
+.arcade-hud-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.arcade-pill {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.arcade-pill strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+}
+
+.hud-accent {
+  color: var(--accent-cyan);
+}
+
+.hud-combo {
+  color: #f59e0b;
+}
+
+.hud-timer {
+  color: #ef4444;
+}
+
+.hud-game-tag {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #fff;
+}
+
+.arcade-arena-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* 3D Stage Viewport */
+.arcade-stage-wrapper {
+  position: relative;
+  flex: 1;
+  width: calc(100% - 24px);
+  margin: 6px auto 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000000;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.95);
+}
+
+.arcade-stage-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Crisp Distance-Independent 3D DOM Labels */
+.arcade-3d-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.92);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #fff;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.75);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+}
+
+.arcade-3d-label span {
+  white-space: pre;
+}
+
+.arcade-3d-label .label-char-matched {
+  color: #4ade80;
+  font-weight: 900;
+}
+
+.arcade-3d-label .label-char-next {
+  color: #38bdf8;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: rgba(56, 189, 248, 0.2);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+.arcade-3d-label .label-char-remain {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.arcade-3d-label.highlight,
+.arcade-3d-label.matched {
+  border-color: #38bdf8;
+  background: rgba(12, 12, 16, 0.96);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), inset 0 0 0 1px #38bdf8;
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.arcade-3d-label.error {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.22);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), inset 0 0 0 1px #ef4444;
+}
+
+.arcade-3d-label.drone {
+  font-size: 14px;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: rgba(10, 15, 30, 0.9);
+  border: 1.5px solid #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.7), inset 0 0 10px rgba(0, 240, 255, 0.2);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.9);
+  letter-spacing: 2px;
+}
+
+.arcade-3d-label.titan-directive {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #38bdf8 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  letter-spacing: 4px !important;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.95), 0 2px 6px #000 !important;
+}
+
+.arcade-3d-label.crit {
+  border-color: #facc15;
+  color: #facc15;
+  background: rgba(250, 204, 21, 0.25);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.6);
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* Floating 3D Combat Damage & Parry Text */
+.combat-dmg-float {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fb7185;
+  text-shadow: 0 0 10px rgba(244, 63, 94, 0.8), 0 2px 4px rgba(0, 0, 0, 0.95);
+  pointer-events: none;
+  animation: floatFadeUp 0.85s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+  z-index: 100;
+  user-select: none;
+}
+
+.combat-dmg-float.crit {
+  font-size: 24px;
+  color: #facc15;
+  text-shadow: 0 0 16px rgba(250, 204, 21, 0.9), 0 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+.combat-dmg-float.parry {
+  font-size: 22px;
+  color: #38bdf8;
+  text-shadow: 0 0 14px rgba(56, 189, 248, 0.9), 0 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+@keyframes floatFadeUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: translate3d(-50%, -15px, 0) scale(1.18);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(-50%, -35px, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-50%, -60px, 0) scale(0.8);
+  }
+}
+
+/* Cinematic Full-Screen Impact Flash */
+.arcade-impact-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 80;
+  opacity: 0;
+  transition: opacity 0.08s ease-out;
+  border-radius: 14px;
+}
+
+.arcade-impact-flash.active-parry {
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.5) 0%, transparent 70%);
+  opacity: 1;
+}
+
+.arcade-impact-flash.active-perfect {
+  background: radial-gradient(circle at center, rgba(250, 204, 21, 0.6) 0%, transparent 75%);
+  opacity: 1;
+}
+
+.arcade-impact-flash.active-damage {
+  background: radial-gradient(circle at center, rgba(239, 68, 68, 0.55) 0%, transparent 70%);
+  opacity: 1;
+}
+
+.arcade-impact-flash.active-stagger {
+  background: radial-gradient(circle at center, rgba(168, 85, 247, 0.55) 0%, transparent 75%);
+  opacity: 1;
+}
+
+/* ========================================================================= */
+/* 3. ERGONOMIC BOTTOM INPUT DECK                                            */
+/* ========================================================================= */
+
+.arcade-bottom-deck {
+  width: 100%;
+  padding: 10px 20px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  z-index: 15;
+}
+
+.arcade-input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+}
+
+.arcade-game-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 18px;
+  background: #08080a;
+  border: 2px solid rgba(56, 189, 248, 0.35);
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  outline: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), inset 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.arcade-game-input:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), inset 0 0 0 1px var(--accent-cyan);
+  background: #0d0d10;
+}
+
+.arcade-game-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.arcade-input-hints {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.arcade-input-hints span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ========================================================================= */
+/* 4. MISSION REPORT / GAME OVER MODAL                                       */
+/* ========================================================================= */
+
+.arcade-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.arcade-debrief-card {
+  background: #08080a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 32px 36px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: debriefPopIn 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes debriefPopIn {
+  0% { opacity: 0; transform: scale(0.94) translateY(12px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.debrief-icon {
+  font-size: 46px;
+  line-height: 1;
+}
+
+.debrief-title {
+  font-family: var(--font-ui);
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.debrief-score-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.debrief-score-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.debrief-score-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+}
+
+.debrief-new-best-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  color: #10b981;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+  align-self: center;
+}
+
+.debrief-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.debrief-stat-cell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.debrief-stat-cell .k {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.debrief-stat-cell .v {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.debrief-xp-reward {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.debrief-xp-val {
+  font-family: 'JetBrains Mono', monospace;
+  color: #c084fc;
+  font-size: 16px;
+}
+
+.debrief-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.debrief-restart-btn {
+  flex: 1;
+  background: var(--accent-cyan);
+  color: #090a0f !important;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 800;
+  padding: 0 16px;
+  min-height: 44px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.debrief-restart-btn:hover {
+  background: #7dd3fc;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+}
+
+.debrief-restart-btn kbd {
+  background: #090a0f !important;
+  border: 1px solid rgba(0, 0, 0, 0.55) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  padding: 2px 8px !important;
+  border-radius: 5px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) !important;
+}
+
+.debrief-gallery-btn kbd {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.debrief-gallery-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff !important;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 16px;
+  min-height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* ========================================================================= */
+/* 5. 2D RETRO DRILLS INTEGRATION (Meteor Defense & Speed Racer)              */
+/* ========================================================================= */
+
+.defense-canvas-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#defense-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.defense-hud-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 24px;
+}
+
+.defense-top-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.defense-hud-card {
+  background: #09090b;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.defense-hud-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+}
+
+.defense-hud-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.defense-shields-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.defense-shield-pip {
+  width: 22px;
+  height: 10px;
+  border-radius: 3px;
+  background: rgba(56, 189, 248, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.defense-shield-pip.active {
+  background: var(--accent-cyan);
+  border-color: #fff;
+}
+
+.defense-combo-badge {
+  font-size: 18px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: var(--accent-cyan);
+  font-family: 'Outfit', sans-serif;
+}
+
+.defense-bottom-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.defense-lock-box {
+  background: #09090b;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.defense-lock-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+}
+
+/* Speed Racer Mode */
+.racer-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  background: #000000;
+  gap: 20px;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.racer-track-arena {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.racer-lane {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.racer-lane.player-lane {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.racer-track-line {
+  position: absolute;
+  left: 120px;
+  right: 80px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.racer-track-line::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: -10px;
+  width: 10px;
+  height: 22px;
+  background: repeating-linear-gradient(
+    0deg,
+    #ffffff 0px,
+    #ffffff 4px,
+    #000000 4px,
+    #000000 8px
+  );
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+
+.racer-driver-tag {
+  width: 110px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.racer-driver-tag.player {
+  color: var(--accent-cyan);
+}
+
+.racer-car-icon {
+  position: absolute;
+  left: 120px;
+  font-size: 22px;
+  transition: transform 0.15s ease-out;
+  z-index: 3;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.racer-speed-readout {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 2;
+}
+
+.racer-prompt-box {
+  background: #08080a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 20px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 19px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  outline: none;
+}
+
+.racer-prompt-box .char-typed {
+  color: #4ade80;
+}
+
+.racer-prompt-box .char-current {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 800;
+  background: rgba(56, 189, 248, 0.18);
+  border-radius: 2px;
+}
+
+.racer-prompt-box .char-error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.racer-car-icon.nitro-active {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) !important;
+  transform: scale(1.08);
+}
+
+/* 3D Speed Racer GP Dashboard & Holographic Windshield HUD */
+.racer-3d-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.racer-dash-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.racer-position-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.racer-position-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 26px;
+  font-weight: 900;
+  color: #4ade80;
+  line-height: 1;
+}
+
+.racer-position-total {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.racer-speedometer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.racer-speedo-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--accent-cyan);
+  line-height: 1;
+}
+
+.racer-nitro-meter {
+  width: 120px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin-top: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.racer-nitro-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8 0%, #4ade80 100%);
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+.racer-nitro-fill.overdrive {
+  background: linear-gradient(90deg, #f59e0b 0%, #f43f5e 100%);
+  box-shadow: 0 0 10px #f43f5e;
+}
+
+/* Holographic Typing HUD */
+.racer-hologram-card {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 10px;
+  background: rgba(9, 9, 14, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 14px;
+  padding: 16px 22px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  pointer-events: auto;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.racer-hologram-card.nitro-glow {
+  border-color: #4ade80;
+  box-shadow: 0 0 24px rgba(74, 222, 128, 0.35), inset 0 0 12px rgba(74, 222, 128, 0.15);
+}
+
+.racer-hologram-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 19px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.45);
+  user-select: none;
+}
+
+.racer-hologram-text .char-typed {
+  color: #4ade80;
+  font-weight: 700;
+}
+
+.racer-hologram-text .char-current {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 800;
+  background: rgba(56, 189, 248, 0.22);
+  border-radius: 2px;
+}
+
+.racer-hologram-text .char-error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.25);
+}
+
+/* Tactical Aiming Reticle (Free Fire HUD Target Lock) */
+.arcade-aim-reticle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  margin-top: -22px;
+  pointer-events: none;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.05s ease-out;
+  opacity: 0.7;
+}
+
+.arcade-aim-reticle .reticle-ring {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0, 240, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.arcade-aim-reticle.locked .reticle-ring {
+  border-color: #ef4444;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.8);
+}
+
+.arcade-aim-reticle .reticle-bracket {
+  display: none;
+}
+
+.arcade-aim-reticle .reticle-info {
+  display: none;
+}
+
+@keyframes reticleSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Difficulty Selector Ribbon on Arcade Cards */
+.arcade-card-difficulty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 4px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+.arcade-diff-btn {
+  flex: 1;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.arcade-diff-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.arcade-diff-btn.active {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
+}
+
+.arcade-diff-btn.active.nightmare {
+  background: rgba(244, 63, 94, 0.18);
+  border-color: #f43f5e;
+  color: #f43f5e;
+  box-shadow: 0 0 10px rgba(244, 63, 94, 0.35);
+}
+
+.racer-speedometer-box.speedo-redline {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.6), inset 0 0 10px rgba(244, 63, 94, 0.3);
+  border-color: #f43f5e;
+}
+
+/* ========================================================================= */
+/* 6. RESPONSIVE BREAKPOINTS                                                 */
+/* ========================================================================= */
+
+@media (max-width: 900px) {
+  .arcade-view-container {
+    height: calc(100vh - 68px);
+    border-radius: 12px;
+  }
+  .arcade-hub-header {
+    padding: 12px 16px;
+  }
+  .arcade-games-scroll-body {
+    padding: 16px;
+  }
+  .arcade-games-grid {
+    grid-template-columns: 1fr;
+  }
+  .arcade-game-input {
+    height: 44px;
+    font-size: 17px;
+  }
+}
+
+/* ========================================================================= */
+/* ARCADE TROPHIES DRAWER & TOAST NOTIFICATION                              */
+/* ========================================================================= */
+.arcade-trophies-drawer {
+  background: #08080c;
+  border-bottom: 1px solid rgba(250, 204, 21, 0.25);
+  padding: 16px 28px 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.trophies-drawer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trophies-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.trophies-drawer-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #facc15;
+  letter-spacing: 1px;
+}
+
+.trophies-drawer-subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.trophies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.arcade-trophy-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.arcade-trophy-badge.earned {
+  background: rgba(250, 204, 21, 0.06);
+  border-color: rgba(250, 204, 21, 0.45);
+  box-shadow: 0 4px 16px rgba(250, 204, 21, 0.12);
+}
+
+.arcade-trophy-badge.locked {
+  opacity: 0.6;
+}
+
+.trophy-badge-icon {
+  font-size: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.arcade-trophy-badge.earned .trophy-badge-icon {
+  border-color: #facc15;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.35);
+}
+
+.trophy-badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.trophy-badge-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.arcade-trophy-badge.earned .trophy-badge-title {
+  color: #facc15;
+}
+
+.trophy-badge-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.trophy-badge-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 4px;
+  color: #64748b;
+}
+
+.arcade-trophy-badge.earned .trophy-badge-status {
+  color: #4ade80;
+}
+
+/* ========================================================================= */
+/* THE ARMORY // WEAPON & VEHICLE SKINS DRAWER                               */
+/* ========================================================================= */
+.arcade-armory-drawer {
+  background: #08080c;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 16px 28px 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.armory-drawer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.armory-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.armory-drawer-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  letter-spacing: 1px;
+}
+
+.armory-drawer-subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.armory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.arcade-skin-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.arcade-skin-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.arcade-skin-card.active {
+  border-color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.08);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.arcade-skin-card.locked {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.skin-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skin-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.skin-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skin-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.skin-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.skin-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+/* ========================================================================= */
+/* 10. TACTICAL ADS SCOPE OVERLAY (FREE FIRE / AAA SHOOTER LEVEL)            */
+/* ========================================================================= */
+
+.dropzone-ads-scope {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+  background: radial-gradient(circle at center, transparent 38%, rgba(0, 0, 0, 0.75) 55%, rgba(0, 0, 0, 0.96) 80%);
+}
+
+.dropzone-ads-scope.active {
+  opacity: 1;
+}
+
+.scope-crosshair-ring {
+  width: 320px;
+  height: 320px;
+  border: 1.5px solid rgba(0, 240, 255, 0.55);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.25), inset 0 0 25px rgba(0, 240, 255, 0.15);
+}
+
+.scope-center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #ff0055;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055;
+}
+
+.scope-hash-h {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: rgba(0, 240, 255, 0.45);
+  transform: translateY(-50%);
+}
+
+.scope-hash-v {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  width: 1px;
+  background: rgba(0, 240, 255, 0.45);
+  transform: translateX(-50%);
+}
+
+.scope-rangefinder {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #00f0ff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+  white-space: nowrap;
+}
+
+/* Multi-Kill Broadcast Banner */
+.combat-multikill-banner {
+  position: absolute;
+  top: 68px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: #facc15;
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.2), rgba(234, 88, 12, 0.3));
+  border: 2px solid #facc15;
+  padding: 8px 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 35px rgba(250, 204, 21, 0.8);
+  text-shadow: 0 0 12px rgba(250, 204, 21, 0.9), 0 2px 4px #000;
+  pointer-events: none;
+  z-index: 100;
+  animation: bannerPop 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bannerPop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.6) translateY(-20px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08) translateY(0);
+  }
+  30% {
+    transform: translateX(-50%) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9) translateY(-15px);
+  }
+}
+
+/* GTA Police Pursuit Heat Level HUD */
+.racer-pursuit-hud {
+  position: absolute;
+  top: 72px;
+  right: 20px;
+  background: rgba(10, 10, 20, 0.88);
+  border: 2px solid #ef4444;
+  border-radius: 10px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+  animation: policeStrobe 0.8s infinite alternate;
+  z-index: 50;
+  pointer-events: none;
+}
+
+@keyframes policeStrobe {
+  0% {
+    border-color: #ef4444;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.7);
+  }
+  100% {
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+  }
+}
+
+/* Stratagem Support Callout */
+.stratagem-callout {
+  position: absolute;
+  bottom: 80px;
+  right: 24px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1.5px solid #4ade80;
+  border-radius: 8px;
+  padding: 8px 14px;
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.35);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #4ade80;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 50;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+

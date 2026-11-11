@@ -1,0 +1,29 @@
+{
+  "name": "santypes",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint -c .oxlintrc.json src tests"
+  },
+  "devDependencies": {
+    "@fontsource/dm-mono": "5.3.0",
+    "@fontsource/fira-code": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/noto-sans-devanagari": "5.3.0",
+    "@fontsource/noto-sans-kannada": "5.3.0",
+    "@fontsource/outfit": "5.3.0",
+    "@fontsource/roboto-mono": "5.3.0",
+    "@types/three": "0.186.0",
+    "oxlint": "1.93.0",
+    "three": "0.185.1",
+    "typescript": "5.9.3",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  }
+}

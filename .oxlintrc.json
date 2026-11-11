@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-script-url": "error",
+    "no-debugger": "error",
+    "no-alert": "warn",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "typescript/no-explicit-any": "error"
+  },
+  "ignorePatterns": [
+    "dist",
+    "node_modules",
+    "src/views/arcade/**",
+    "src/views/arcade-view.ts",
+    "src/core/arcade-3d-framework.ts",
+    "src/utils/procedural-textures.ts",
+    "src/engine/**",
+    "src/data/**",
+    "tests/arcade.test.ts"
+  ]
+}
